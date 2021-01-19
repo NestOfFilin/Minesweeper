@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Logic">
+      <UniqueIdentifier>{14cae5be-050e-4b30-9788-91749f12793f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Front">
+      <UniqueIdentifier>{62e3bc67-9ff1-4f52-8fd5-c0af6a8e0708}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Logic\MineCell.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Logic\MineField.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Logic\MineFieldFactory.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Logic\MinesweeperRound.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Logic\MinesweeperStep.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Front\Front.cpp">
+      <Filter>Front</Filter>
+    </ClCompile>
+    <ClCompile Include="MinesweeperApp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Logic\MineCell.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Logic\MineField.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Logic\MineFieldFactory.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Logic\MinesweeperRound.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Logic\MinesweeperStep.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Front\Front.h">
+      <Filter>Front</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
