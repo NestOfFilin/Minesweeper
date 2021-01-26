@@ -2,23 +2,12 @@
 
 #include <iostream>
 
-int main(void)
+int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
+    _In_opt_ HINSTANCE hPrevInstance,
+    _In_ LPWSTR    lpCmdLine,
+    _In_ int       nCmdShow)
 {
-    /*
-    unsigned char wigth = 10u,
-        heigth = 10u;
-    unsigned mineCnt = 15u;
-    // create field
-    MineField mineField = MineField(wigth, heigth, mineCnt);
-
-    for (int i = 0; i < wigth; i++)
-    {
-        for (int j = 0; j < heigth; j++)
-        {
-            std::cout << (unsigned)mineField(i, j) << '\t';
-        }
-        std::cout << std::endl;
-    }
-    system("pause>nul");*/
+    AllocConsole();
 	Front front;
+    FreeConsole();
 }

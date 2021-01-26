@@ -27,7 +27,7 @@ Front::Front()
     hStdIn = GetStdHandle(STD_INPUT_HANDLE);
     // if (hStdIn == INVALID_HANDLE_VALUE) надо чото сделать если ошибка
     hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
-    // if (hStdIn == INVALID_HANDLE_VALUE) надо чото сделать если ошибка
+    // if (hStdOut == INVALID_HANDLE_VALUE) надо чото сделать если ошибка
 
     GetConsoleMode(hStdIn, &oldConsoleMode); // проверку написать
     curConsoleMode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT | ENABLE_EXTENDED_FLAGS;
@@ -85,9 +85,12 @@ void Front::Game()
         switch (irInBuf[0].EventType)
         {
         case KEY_EVENT: // keyboard input 
-            if (mineField.GetStatus() == MineFieldState::Cleaned 
+            if (mineField.GetStatus() == MineFieldState::Cleaned
                 || mineField.GetStatus() == MineFieldState::Undermined)
-                fLoop = !fLoop;
+            {
+                fLoop = false;
+                FlushConsoleInputBuffer(hStdIn);
+            }
             break;
         case MOUSE_EVENT: // mouse input 
             if (mineField.GetStatus() == MineFieldState::Razminirovivaetsya)
