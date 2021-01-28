@@ -13,7 +13,7 @@ private:
 	DWORD curConsoleMode;
 
 	bool WriteConsoleOutPut(CHAR_INFO* chiBuffer, COORD bufSize, COORD bufCoord);
-	bool WriteChar(char ch, COORD bufCoord);
+	bool WriteChar(wchar_t ch, COORD bufCoord);
 
 	void MainMenu();
 	void Game();

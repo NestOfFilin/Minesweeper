@@ -7,7 +7,7 @@ bool Front::WriteConsoleOutPut(CHAR_INFO *chiBuffer, COORD bufSize, COORD bufCoo
     writeRect.Top = bufCoord.Y;
     writeRect.Right = bufCoord.X + bufSize.X - 1;
     writeRect.Bottom = bufCoord.Y + bufSize.Y - 1;
-    return WriteConsoleOutput(
+    return WriteConsoleOutputW(
         hStdOut, // screen buffer to write to 
         chiBuffer,        // buffer to copy from 
         bufSize,     // col-row size of chiBuffer 
@@ -15,7 +15,7 @@ bool Front::WriteConsoleOutPut(CHAR_INFO *chiBuffer, COORD bufSize, COORD bufCoo
         &writeRect);  // dest. screen buffer rectangle 
 }
 
-bool Front::WriteChar(char ch, COORD bufCoord)
+bool Front::WriteChar(wchar_t ch, COORD bufCoord)
 {
     COORD buffSize = { 1u, 1u };
     CHAR_INFO cellInf[1] = { { { ch }, 7 } };
@@ -56,7 +56,7 @@ void Front::Game()
     // render field
     for (unsigned i = 0; i < cellCount; i++)
     {
-        chiBuffer[i] = { { 'x' }, 7 };
+        chiBuffer[i] = { { L'\u258c' }, 7 };
     }
     flag = WriteConsoleOutPut(chiBuffer, { wigth, heigth }, crdBufCoord);
 
@@ -122,14 +122,14 @@ void Front::Game()
                                     {
                                         if (cellVal == 0)
                                         {
-                                            flag = WriteChar(' ', cellCrd);
+                                            flag = WriteChar(L' ', cellCrd);
                                         }
                                         else
-                                            flag = WriteChar((char)('0' + cellVal), cellCrd);
+                                            flag = WriteChar((L'0' + cellVal), cellCrd);
                                     }
                                     else
                                     {
-                                        flag = WriteChar('✶', cellCrd);
+                                        flag = WriteChar(static_cast<wchar_t>(L'\u2735'), cellCrd);
                                     }
                                     OpenedMineCells* q = openedCells;
                                     openedCells = openedCells->Next;
@@ -149,9 +149,9 @@ void Front::Game()
                             case MineCellState::MarkedCell:
                                 cellState = mineField.MarkCell(cursorCrd.X, cursorCrd.Y);
                                 if (cellState == MineCellState::MarkedCell)
-                                    flag = WriteChar('p', cursorCrd);
+                                    flag = WriteChar(L'\u2690', cursorCrd);
                                 else
-                                    flag = WriteChar('x', cursorCrd);
+                                    flag = WriteChar(L'\u258c', cursorCrd);
                                 break;
                             default:
                                 break;
