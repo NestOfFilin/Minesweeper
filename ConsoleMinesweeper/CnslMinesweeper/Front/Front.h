@@ -3,6 +3,8 @@
 #include <windows.h>
 #include "../Logic/MineField.h"
 
+#include "../resource.h"
+
 class Front
 {
 private:

@@ -67,7 +67,6 @@ void Front::Game()
     CONSOLE_SCREEN_BUFFER_INFO consoleScreenBufferInfo;
     COORD cursorCrd;
     MineCellState cellState;
-    char cellSimbol;
     bool fLoop = true;
     
 

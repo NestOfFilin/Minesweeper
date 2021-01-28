@@ -154,6 +154,10 @@
     <ClInclude Include="Logic\MineFieldFactory.h" />
     <ClInclude Include="Logic\MinesweeperRound.h" />
     <ClInclude Include="Logic\MinesweeperStep.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resouces\CnslMinesweeper.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
