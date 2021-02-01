@@ -222,11 +222,10 @@ unsigned char Front::MainMenu()
 
 void Front::Game(unsigned char wigth, unsigned char heigth, unsigned mineCnt)
 {
-    bool flag = true;
-
     // create field
     MineField mineField = MineField(wigth, heigth, mineCnt);
 
+    bool flag = true;
     COORD crdBufCoord = { 0u, 0u };
     unsigned cellCount = wigth * heigth;
     const PCHAR_INFO chiBuffer = CreateCharInfoSetByChar(L'\u258c', cellCount);
@@ -278,8 +277,7 @@ void Front::Game(unsigned char wigth, unsigned char heigth, unsigned mineCnt)
                     if ((cursorCrd.X >= 0 && cursorCrd.X <= wigth - 1) 
                         && (cursorCrd.Y >= 0 && cursorCrd.Y <= heigth - 1))
                     {
-                        MineCell cell = mineField(cursorCrd.X, cursorCrd.Y);
-                        cellState = cell.GetStatus();
+                        cellState = mineField(cursorCrd.X, cursorCrd.Y);
                         if (mer.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
                         {
                             switch (cellState)

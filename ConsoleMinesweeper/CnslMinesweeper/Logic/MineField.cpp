@@ -63,7 +63,6 @@ MineCellState MineField::operator() (unsigned char x, unsigned char y)
 
 OpenedMineCells* MineField::OpenCell(unsigned char x, unsigned char y)
 {
-	// проверку на корректность координат
 	OpenedMineCells* cells = nullptr;
 	if (_field[y][x]->GetStatus() == MineCellState::CloseCell)
 	{
@@ -74,8 +73,6 @@ OpenedMineCells* MineField::OpenCell(unsigned char x, unsigned char y)
 		cells->y = y;
 		cells->Next = nullptr;
 
-		// здесь после смены состо€ни€ нет немедленного выхода из функции
-		// т.к. последн€€ открыта€ клетка может оказатьс€ с миной
 		if (++_openedCellCount + _mineCount == _cellCount)
 			_state = MineFieldState::Cleaned;
 
@@ -90,7 +87,6 @@ OpenedMineCells* MineField::OpenCell(unsigned char x, unsigned char y)
 
 MineCellState MineField::MarkCell(unsigned char x, unsigned char y)
 {
-	// проверку на корректность координат
 	MineCellState resCellState = _field[y][x]->Mark();
 
 	unsigned char dMarksCount = resCellState == MineCellState::MarkedCell ? 1
@@ -116,10 +112,8 @@ MineCellState MineField::MarkCell(unsigned char x, unsigned char y)
 
 OpenedMineCells* MineField::OpenCellsAround(unsigned char x, unsigned char y)
 {
-	// проверку на корректность координат
 	OpenedMineCells *cells = nullptr, *tailCell = cells;
 
-	// гарантированно вернетс€ стек из 8 элементов
 	stack<MineCell*>* aroundCellsStack = GetAroundCellsStack(x, y);
 	for (short i = -1; i <= 1; i++)
 		for (short j = -1; j <= 1; j++)
