@@ -32,6 +32,9 @@
       <Filter>Front</Filter>
     </ClCompile>
     <ClCompile Include="MinesweeperApp.cpp" />
+    <ClCompile Include="Logic\MinesweeperRoundHistory.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Logic\MineCell.h">
@@ -53,6 +56,9 @@
       <Filter>Front</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Logic\MinesweeperRoundHistory.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resouces\CnslMinesweeper.rc">

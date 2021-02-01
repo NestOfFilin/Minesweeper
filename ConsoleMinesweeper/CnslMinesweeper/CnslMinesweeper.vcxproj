@@ -144,6 +144,7 @@
     <ClCompile Include="Logic\MineField.cpp" />
     <ClCompile Include="Logic\MineFieldFactory.cpp" />
     <ClCompile Include="Logic\MinesweeperRound.cpp" />
+    <ClCompile Include="Logic\MinesweeperRoundHistory.cpp" />
     <ClCompile Include="Logic\MinesweeperStep.cpp" />
     <ClCompile Include="MinesweeperApp.cpp" />
   </ItemGroup>
@@ -153,6 +154,7 @@
     <ClInclude Include="Logic\MineField.h" />
     <ClInclude Include="Logic\MineFieldFactory.h" />
     <ClInclude Include="Logic\MinesweeperRound.h" />
+    <ClInclude Include="Logic\MinesweeperRoundHistory.h" />
     <ClInclude Include="Logic\MinesweeperStep.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
