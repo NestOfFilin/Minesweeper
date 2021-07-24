@@ -78,8 +78,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\..\..\Bins\Minesweeper\Output</OutDir>
-    <IntDir>..\..\..\Bins\Minesweeper\Intermediate</IntDir>
+    <OutDir>..\..\..\Bins\Minesweeper\Output\</OutDir>
+    <IntDir>..\..\..\Bins\Minesweeper\Intermediate\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
