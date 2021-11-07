@@ -55,9 +55,11 @@
     <ClInclude Include="Front\Front.h">
       <Filter>Front</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h" />
     <ClInclude Include="Logic\MinesweeperRoundHistory.h">
       <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

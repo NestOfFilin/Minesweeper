@@ -129,7 +129,7 @@ unsigned char Front::MainMenu()
     INPUT_RECORD irInBuf[INPUT_RECORD_SIZE];
     COORD cursorCrd = { 0, 0 };
     char selectedMI = -1;
-    CHAR_INFO chiBuf;
+
     bool fLoop = true, fChangeMI[4] = { false, false, false, false };
     while (fLoop)
     {
@@ -142,7 +142,7 @@ unsigned char Front::MainMenu()
         {
         case KEY_EVENT: 
         {
-            if (!irInBuf[0].Event.KeyEvent.bKeyDown || !irInBuf[0].Event.KeyEvent.wRepeatCount > 1)
+            if (!irInBuf[0].Event.KeyEvent.bKeyDown || !(irInBuf[0].Event.KeyEvent.wRepeatCount > 1))
                 break;
             fLoop = false;
             selectedMI = 3;
@@ -256,7 +256,7 @@ void Front::Game(unsigned char wigth, unsigned char heigth, unsigned mineCnt)
         switch (irInBuf[0].EventType)
         {
         case KEY_EVENT: // keyboard input 
-            if (!irInBuf[0].Event.KeyEvent.bKeyDown || !irInBuf[0].Event.KeyEvent.wRepeatCount > 1)
+            if (!irInBuf[0].Event.KeyEvent.bKeyDown || !(irInBuf[0].Event.KeyEvent.wRepeatCount > 1))
                 break;
             if (mineField.GetStatus() == MineFieldState::Cleaned
                 || mineField.GetStatus() == MineFieldState::Undermined)
